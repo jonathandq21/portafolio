@@ -1,29 +1,85 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center text-center p-10">
-      <h1 className="text-4xl font-bold">Jonathan David Quintero Villamizar</h1>
-      <p className="mt-2">Desarrollador Web - Bucaramanga</p>
+    <>
+      <Header />
 
-      <div className="mt-6 space-y-2">
-        <p>GitHub: https://github.com/jonathandq21</p>
-        <p>LinkedIn: www.linkedin.com/in/jonathan-david-quintero-villamizar-488b54365</p>
-      </div>
+      <main className="min-h-screen bg-gray-50 text-gray-900 pt-32">
+        <section className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold leading-tight">
+            Jonathan David Quintero Villamizar
+          </h1>
 
-      <div className="mt-6 max-w-xl">
-        <p>
-          Este proyecto fue construido usando Next.js, Supabase y Tailwind.
-        </p>
-      </div>
+          <p className="mt-4 text-lg text-gray-600">
+            Desarrollador de Software — Bucaramanga, Colombia
+          </p>
 
-      <Link
-        href="/login"
-        className="mt-8 bg-black text-white px-6 py-3"
-      >
-        Iniciar sesión
-      </Link>
-    </main>
+          <div className="mt-6 space-x-6">
+            <a
+              href="https://github.com/jonathandq21"
+              target="_blank"
+              className="underline hover:text-gray-700"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/jonathan-david-quintero-villamizar-488b54365"
+              target="_blank"
+              className="underline hover:text-gray-700"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </section>
+
+        {/* Sobre mí */}
+        <section
+          id="about"
+          className="max-w-3xl mx-auto px-6 mt-20 text-center"
+        >
+          <h2 className="text-2xl font-semibold">Sobre mí</h2>
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            Desarrollador apasionado por la tecnología y el aprendizaje
+            continuo. Actualmente cursando Ingeniería de Sistemas.
+            Experiencia en desarrollo web, mantenimiento de sistemas,
+            optimización de bases de datos y trabajo bajo metodologías ágiles.
+            Me caracterizo por mi pensamiento lógico, adaptación rápida y
+            compromiso con la calidad del software.
+          </p>
+        </section>
+
+        {/* Tecnologías */}
+        <section
+          id="tech"
+          className="max-w-4xl mx-auto px-6 mt-20 text-center"
+        >
+          <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
+
+          <p className="mt-4 text-gray-600">
+            React · Next.js · Angular · C# · Java · PHP · TypeScript · SQL ·
+            PostgreSQL · Git · Linux
+          </p>
+        </section>
+
+        {/* IA usada */}
+        <section className="max-w-3xl mx-auto px-6 mt-20 text-center">
+          <h2 className="text-2xl font-semibold">
+            Herramientas de IA utilizadas
+          </h2>
+
+          <p className="mt-4 text-gray-600">
+            Copilot para estructuración de arquitectura, generación de código
+            base y optimización.
+          </p>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }
 
