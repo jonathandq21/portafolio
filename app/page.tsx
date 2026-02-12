@@ -1,10 +1,32 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-3xl font-bold">Portafolio</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center text-center p-10">
+      <h1 className="text-4xl font-bold">Jonathan David Quintero Villamizar</h1>
+      <p className="mt-2">Desarrollador Web - Bucaramanga</p>
+
+      <div className="mt-6 space-y-2">
+        <p>GitHub: https://github.com/jonathandq21</p>
+        <p>LinkedIn: www.linkedin.com/in/jonathan-david-quintero-villamizar-488b54365</p>
+      </div>
+
+      <div className="mt-6 max-w-xl">
+        <p>
+          Este proyecto fue construido usando Next.js, Supabase y Tailwind.
+        </p>
+      </div>
+
+      <Link
+        href="/login"
+        className="mt-8 bg-black text-white px-6 py-3"
+      >
+        Iniciar sesión
+      </Link>
     </main>
   );
 }
+
 
 /*import Image from "next/image";
 
