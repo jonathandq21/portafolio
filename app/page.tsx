@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TechCarousel from "@/components/TechCarousel";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -53,17 +55,12 @@ export default function Home() {
         </section>
 
         {/* Tecnologías */}
-        <section
-          id="tech"
-          className="max-w-4xl mx-auto px-6 mt-20 text-center"
-        >
-          <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
+        <section id="tech" className="max-w-4xl mx-auto px-6 mt-20 text-center">
+  <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
 
-          <p className="mt-4 text-gray-600">
-            React · Next.js · Angular · C# · Java · PHP · TypeScript · SQL ·
-            PostgreSQL · Git · Linux
-          </p>
-        </section>
+  <TechCarousel />
+</section>
+
 
         {/* IA usada */}
         <section className="max-w-3xl mx-auto px-6 mt-20 text-center">
