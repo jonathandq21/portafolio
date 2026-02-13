@@ -56,10 +56,10 @@ export default function Home() {
 
         {/* Tecnologías */}
         <section id="tech" className="max-w-4xl mx-auto px-6 mt-20 text-center">
-  <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
+          <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
 
-  <TechCarousel />
-</section>
+          <TechCarousel />
+        </section>
 
 
         {/* IA usada */}
