@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TechCarousel from "@/components/TechCarousel";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 
 import Link from "next/link";
 
@@ -9,7 +11,8 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="min-h-screen bg-gray-50 text-gray-900 pt-32">
+      <main className="flex-1 bg-gray-50 text-gray-900 py-24">
+
         <section className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold leading-tight">
             Jonathan David Quintero Villamizar
@@ -19,30 +22,34 @@ export default function Home() {
             Desarrollador de Software — Bucaramanga, Colombia
           </p>
 
-          <div className="mt-6 space-x-6">
+          <div className="mt-8 flex justify-center gap-6 text-2xl">
             <a
               href="https://github.com/jonathandq21"
               target="_blank"
-              className="underline hover:text-gray-700"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-black transition-transform hover:scale-110"
             >
-              GitHub
+              <FaGithub />
             </a>
 
             <a
               href="https://www.linkedin.com/in/jonathan-david-quintero-villamizar-488b54365"
               target="_blank"
-              className="underline hover:text-gray-700"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600 transition-transform hover:scale-110"
             >
-              LinkedIn
+              <FaLinkedin />
             </a>
           </div>
+
         </section>
 
         {/* Sobre mí */}
         <section
           id="about"
-          className="max-w-3xl mx-auto px-6 mt-20 text-center"
+          className="max-w-4xl mx-auto px-6 mt-20 text-center scroll-mt-40"
         >
+
           <h2 className="text-2xl font-semibold">Sobre mí</h2>
           <p className="mt-4 text-gray-600 leading-relaxed">
             Desarrollador apasionado por la tecnología y el aprendizaje
