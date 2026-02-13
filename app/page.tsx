@@ -1,19 +1,35 @@
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TechCarousel from "@/components/TechCarousel";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <>
       <Header />
 
       <main className="flex-1 bg-gray-50 text-gray-900 py-24">
 
-        <section className="max-w-4xl mx-auto px-6 text-center">
+        {/* HERO */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="max-w-4xl mx-auto px-6 text-center"
+        >
           <h1 className="text-5xl font-bold leading-tight">
             Jonathan David Quintero Villamizar
           </h1>
@@ -41,15 +57,17 @@ export default function Home() {
               <FaLinkedin />
             </a>
           </div>
+        </motion.section>
 
-        </section>
-
-        {/* Sobre mí */}
-        <section
+        {/* ABOUT */}
+        <motion.section
           id="about"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           className="max-w-4xl mx-auto px-6 mt-20 text-center scroll-mt-40"
         >
-
           <h2 className="text-2xl font-semibold">Sobre mí</h2>
           <p className="mt-4 text-gray-600 leading-relaxed">
             Desarrollador apasionado por la tecnología y el aprendizaje
@@ -59,18 +77,29 @@ export default function Home() {
             Me caracterizo por mi pensamiento lógico, adaptación rápida y
             compromiso con la calidad del software.
           </p>
-        </section>
+        </motion.section>
 
-        {/* Tecnologías */}
-        <section id="tech" className="max-w-4xl mx-auto px-6 mt-20 text-center">
+        {/* TECH */}
+        <motion.section
+          id="tech"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="max-w-4xl mx-auto px-6 mt-20 text-center"
+        >
           <h2 className="text-2xl font-semibold">Tecnologías principales</h2>
-
           <TechCarousel />
-        </section>
+        </motion.section>
 
-
-        {/* IA usada */}
-        <section className="max-w-3xl mx-auto px-6 mt-20 text-center">
+        {/* IA TOOLS */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="max-w-3xl mx-auto px-6 mt-20 text-center"
+        >
           <h2 className="text-2xl font-semibold">
             Herramientas de IA utilizadas
           </h2>
@@ -79,14 +108,14 @@ export default function Home() {
             Copilot para estructuración de arquitectura, generación de código
             base y optimización.
           </p>
-        </section>
+        </motion.section>
+
       </main>
 
       <Footer />
     </>
   );
 }
-
 
 /*import Image from "next/image";
 
