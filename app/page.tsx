@@ -22,7 +22,6 @@ export default function Home() {
 
       <main className="flex-1 bg-gray-50 text-gray-900 py-24">
 
-        {/* HERO */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
