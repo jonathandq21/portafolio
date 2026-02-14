@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portafolio Personal – Arquitectura con Autenticación Segura
 
-## Getting Started
+Aplicación web desarrollada con **Next.js (App Router)** que implementa un sistema de autenticación, control de acceso y protección de rutas privadas utilizando Supabase como proveedor de identidad.
 
-First, run the development server:
+Este proyecto funciona como base arquitectónica para aplicaciones SaaS o dashboards administrativos que requieren gestión de sesiones y acceso restringido.
+
+---
+
+## 🧠 Objetivo del Proyecto
+
+El propósito principal de esta aplicación es demostrar:
+
+- Protección de rutas privadas en aplicaciones Next.js
+- Redirección segura y control de navegación
+- Estructura escalable para futuras integraciones
+
+---
+
+
+## 🔐 Sistema de Autenticación
+
+La autenticación fue implementada utilizando **Supabase Auth** como servicio de identidad.
+
+### Flujo de autenticación:
+
+1. El usuario ingresa sus credenciales (email y contraseña).
+2. Supabase valida las credenciales y genera una sesión activa.
+3. Se redirige al usuario al Dashboard privado.
+4. En cada carga del Dashboard se valida la sesión activa.
+5. Si no existe sesión válida → redirección automática al Login.
+6. El cierre de sesión elimina la sesión activa y bloquea el acceso inmediato a rutas privadas.
+
+Este enfoque garantiza que el contenido protegido no sea accesible sin autenticación válida.
+
+---
+
+## 🖥 Dashboard Privado
+
+El Dashboard representa una zona protegida accesible únicamente con sesión activa.
+
+### Características implementadas:
+
+- Validación de sesión al montar el componente
+- Redirección inmediata en caso de sesión inexistente
+- Cierre de sesión controlado
+- Navegación gestionada con `router.replace()` para evitar accesos indebidos mediante historial del navegador
+
+
+---
+
+## 🏗 Arquitectura Técnica
+
+### Frontend
+- Next.js 14 (App Router)
+- React
+- TailwindCSS
+- Framer Motion (animaciones)
+
+### Autenticación
+- Supabase Auth
+- Gestión de sesión en cliente
+- Validación dinámica de acceso
+
+
+---
+
+## 📂 Estructura del Proyecto
+
+/app
+/login
+/dashboard
+/components
+/lib
+supabase.ts
+
+
+---
+
+## ⚙ Instalación
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
