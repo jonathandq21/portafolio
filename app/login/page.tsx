@@ -18,7 +18,8 @@ export default function Login() {
     });
 
     if (!error) {
-      router.push("/dashboard");
+      router.replace("/dashboard");
+
     } else {
       alert(error.message);
     }
@@ -27,7 +28,6 @@ export default function Login() {
   return (
     <div className="min-h-screen flex relative overflow-hidden">
 
-      {/* Botón Volver animado */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -49,7 +49,6 @@ export default function Login() {
         </button>
       </motion.div>
 
-      {/* Lado izquierdo - Formulario */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -89,8 +88,6 @@ export default function Login() {
           </div>
         </div>
       </motion.div>
-
-      {/* Lado derecho - Imagen */}
       <motion.div
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
