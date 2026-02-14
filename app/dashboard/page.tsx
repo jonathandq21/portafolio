@@ -84,7 +84,7 @@ export default function Home() {
           >
             <div className="w-44 h-44 relative">
               <Image
-                src="/images/foto.jpg"
+                src="/images/foto1.jpg"
                 alt="Jonathan"
                 fill
                 className="rounded-full object-cover border border-gray-700 shadow-xl"
