@@ -39,18 +39,18 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-  const {
-    data: { subscription },
-  } = supabase.auth.onAuthStateChange((event, session) => {
-    if (!session) {
-      router.replace("/login");
-    }
-  });
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) {
+        router.replace("/login");
+      }
+    });
 
-  return () => {
-    subscription.unsubscribe();
-  };
-}, []);
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
 
 
   const technologies = [
@@ -205,30 +205,61 @@ export default function Home() {
             className="mt-28"
           >
             <h2 className="text-2xl font-bold border-b border-gray-700 pb-2 inline-block">
-              PROJECTS
+              PROYECTOS
             </h2>
+
             <div className="grid md:grid-cols-3 gap-8 mt-12">
-              {["Sistema ERP", "App Web Empresarial", "API REST Empresarial"].map(
-                (project) => (
-                  <div
-                    key={project}
-                    className="bg-[#141414] p-6 rounded-xl border border-gray-800 
-                             hover:border-blue-500 transition hover:shadow-lg 
-                             hover:shadow-blue-500/20"
-                  >
+              {[
+                {
+                  name: "Sistema ERP",
+                  image: "/images/erp.jpg",
+                  url: "https://tusitio-erp.com",
+                  description:
+                    "Sistema ERP empresarial para gestión de inventario, facturación y control administrativo. Desarrollado con enfoque en escalabilidad y arquitectura modular. Actualmente no tengo acceso",
+                },
+                {
+                  name: "App Web Empresarial",
+                  image: "/images/appweb.jpg",
+                  url: "https://ramedicas.com",
+                  description:
+                    "Aplicación web corporativa enfocada en presencia digital y optimización, priorizando rendimiento y experiencia de usuario.",
+                },
+                {
+                  name: "Proyecto Personal",
+                  image: "/images/mascotas.jpg",
+                  url: "https://github.com/jonathandq21/MascotWeb/tree/master",
+                  description:
+                    "Proyecto personal orientado a gestión de mascotas, aplicando buenas prácticas de desarrollo frontend",
+                },
+              ].map((project) => (
+                <div
+                  key={project.name}
+                  className="bg-[#141414] rounded-xl border border-gray-800 
+                 hover:border-blue-500 transition hover:shadow-lg 
+                 hover:shadow-blue-500/20 overflow-hidden"
+                >
+                  <a href={project.url} target="_blank" rel="noopener noreferrer">
+                    <div className="overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-48 object-cover transition duration-500 hover:scale-110"
+                      />
+                    </div>
+                  </a>
+                  <div className="p-6">
                     <h3 className="text-lg font-semibold mb-3">
-                      {project}
+                      {project.name}
                     </h3>
+
                     <p className="text-gray-400 text-sm">
-                      Proyecto desarrollado utilizando tecnologías modernas,
-                      enfocado en rendimiento, escalabilidad y buenas prácticas.
+                      {project.description}
                     </p>
                   </div>
-                )
-              )}
+                </div>
+              ))}
             </div>
             <div id="experiencia" className="mt-32 scroll-mt-32">
-
               <h2 className="text-2xl font-bold border-b border-gray-700 pb-2 inline-block">
                 EXPERIENCIA
               </h2>
